@@ -48,7 +48,7 @@ class BlogPostDeleteMedia extends Command
                 ->get($this->argument('id'))
                 ->delete();
 
-            $this->info('Deleted 1 media item associated with the BlogPost.');
+            $this->info(PHP_EOL.'Deleted 1 media item associated with the BlogPost.');
 
             $this->call('blogpost:listmedia');
         }
@@ -57,7 +57,7 @@ class BlogPostDeleteMedia extends Command
             // Deletes all associated media files from the BlogPost
             $blogpost->clearMediaCollection();
 
-            $this->info('Deleted all media associated with the BlogPost.');
+            $this->info(PHP_EOL.'Deleted all media associated with the BlogPost.'.PHP_EOL);
         }
     }
 }

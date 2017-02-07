@@ -40,7 +40,7 @@ class BlogPostAddMedia extends Command
     {
         $mediaPath = $this->argument('mediaPath');
 
-        if (! file_exists($mediaPath)) return $this->error('The file you provided doesn\'t exist. Try using demofiles/sheep.jpg as the mediaPath');
+        if (! file_exists($mediaPath)) return $this->error('The file you provided doesn\'t exist. Try using demofiles/sheep.jpg as the mediaPath'.PHP_EOL);
 
         $blogpost = BlogPost::find(1);
 
@@ -48,9 +48,10 @@ class BlogPostAddMedia extends Command
             ->preservingOriginal()      // Create a copy of the file in the media library
             ->toMediaLibrary();         // Copy the file to the configured disk
 
-        $this->info("Added {$mediaPath} to the blogpost!");
+        $this->info(PHP_EOL."Added {$mediaPath} to the blogpost!");
 
         $media = $blogpost->getMedia()->last();
-        $this->line("Medialibrary has automatically copied the file to the media disk ({$media->getPath()})");
+        $this->line("Medialibrary has automatically copied the file to the media disk:");
+        $this->line($media->getPath().PHP_EOL);
     }
 }

@@ -57,6 +57,8 @@ class BlogPostListMedia extends Command
 
         $headers = ['Id', 'Name', 'Type', 'Size', 'Path'];
 
+        $this->line(PHP_EOL);
         $this->table($headers, $mediaTable->toArray());
+        $this->line(PHP_EOL);
     }
 }

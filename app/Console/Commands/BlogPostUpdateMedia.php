@@ -59,7 +59,7 @@ class BlogPostUpdateMedia extends Command
         // Save the Media like you're used to in Eloquent models
         $media->save();
 
-        $this->info("Media updated: {$media->name} ({$media->getPath()})");
+        $this->info(PHP_EOL."Media updated: {$media->name} ({$media->getPath()})");
 
         $this->call('blogpost:listmedia');
     }

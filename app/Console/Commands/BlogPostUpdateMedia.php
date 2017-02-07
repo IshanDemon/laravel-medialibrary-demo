@@ -40,6 +40,7 @@ class BlogPostUpdateMedia extends Command
     {
         $media = BlogPost::find(1)
             ->getMedia()
+            ->keyBy('id')
             ->get($this->argument('id'));
 
         if (! $media) {

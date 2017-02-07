@@ -18,7 +18,7 @@
 
 ## Introduction
 
-All available examples are available as commands and can be listed by running:
+All available examples are available as commands and can be listed by using the `list` command:
 
 ```php
 php artisan list blogpost

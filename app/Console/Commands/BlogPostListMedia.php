@@ -42,16 +42,20 @@ class BlogPostListMedia extends Command
         $mediaTable = BlogPost::find(1)
             ->getMedia()
             ->map(function (Media $media) {
-                $media->path = $media->getPath();
-                $media = collect($media);
-                return $media->only(['id', 'name', 'mime_type', 'path']);
+                return [
+                    $media->id,
+                    $media->name,
+                    $media->mime_type,
+                    $media->human_readable_size,
+                    $media->getPath()
+                ];
             });
 
         if ($mediaTable->count() == 0) {
             return $this->error('You haven\'t added any media files yet.');
         }
 
-        $headers = ['Id', 'Name', 'Type', 'Path'];
+        $headers = ['Id', 'Name', 'Type', 'Size', 'Path'];
 
         $this->table($headers, $mediaTable->toArray());
     }

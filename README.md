@@ -51,33 +51,11 @@ We've already configured `config/filesystems.php` for you to create a `media` di
 
 ## Available examples
 
-We've created some basic examples showing off the capabilities of the medialibrary. In all examples we'll use the `BlogPost` model to add, modify and remove some images and downloads. All available examples can be listed by running:
-
-```php
-php artisan list blogpost
-```
+We've created some basic examples showing off the capabilities of the medialibrary. All examples are listed [here](EXAMPLES.md).
 
 All example code is available in the `app/Console/Commands` directory and thoroughly documented in the comments.
 
 We've also provided some demo files in the `demofiles` directory.
-
-### 1. Adding media to the blogpost (`BlogPostAddMedia.php`)
-
-Use the following command to a media file to the existing `BlogPost` model. Media files aren't limited to images. Try adding `demofiles/hamlet.pdf` or `demofiles/coolvideo.webm`. You can add as many media files as you want.
-
-```php
-php artisan blogpost:addmedia [demofiles/sheep.jpg]
-```
-
-### 2. Fetching all associated media from the blogpost (`BlogPostListMedia.php`)
-
-Use the following command to fetch all media associated with the blogpost:
-
-```php
-php artisan blogpost:listmedia
-```
-
-### 3. 
 
 ## Documentation
 You'll find the documentation about the `laravel-medialibrary` package on [https://docs.spatie.be/laravel-medialibrary/v5](https://docs.spatie.be/laravel-medialibrary/v5).

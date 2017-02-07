@@ -40,7 +40,7 @@ class BlogPostAddMedia extends Command
     {
         $mediaPath = $this->argument('mediaPath');
 
-        if (! file_exists($mediaPath)) return $this->error('The file you provided doesn\'t exist. Try using demo/sheep.jpg as the mediaPath');
+        if (! file_exists($mediaPath)) return $this->error('The file you provided doesn\'t exist. Try using demofiles/sheep.jpg as the mediaPath');
 
         $blogpost = BlogPost::find(1);
 

@@ -3,7 +3,9 @@
 namespace App\Console;
 
 use App\Console\Commands\BlogPostAddMedia;
+use App\Console\Commands\BlogPostDeleteMedia;
 use App\Console\Commands\BlogPostListMedia;
+use App\Console\Commands\BlogPostUpdateMedia;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,6 +19,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         BlogPostAddMedia::class,
         BlogPostListMedia::class,
+        BlogPostUpdateMedia::class,
+        BlogPostDeleteMedia::class,
     ];
 
     /**

@@ -2,6 +2,8 @@
 
 This Laravel app is a quick command line demo of the capabilities of the [`spatie/laravel-medialibrary`](https://github.com/spatie/laravel-medialibrary) package.
 
+We've created some basic examples showing off the capabilities of the medialibrary. All examples can be found in [EXAMPLES.md](EXAMPLES.md).
+
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 ## Postcardware
@@ -48,14 +50,6 @@ We've already configured `config/filesystems.php` for you to create a `media` di
     'root' => storage_path('app/media'),
 ]
 ```
-
-## Available examples
-
-We've created some basic examples showing off the capabilities of the medialibrary. All examples are listed [here](EXAMPLES.md).
-
-All example code is available in the `app/Console/Commands` directory and thoroughly documented in the comments.
-
-We've also provided some demo files in the `demofiles` directory.
 
 ## Documentation
 You'll find the documentation about the `laravel-medialibrary` package on [https://docs.spatie.be/laravel-medialibrary/v5](https://docs.spatie.be/laravel-medialibrary/v5).

@@ -6,6 +6,7 @@ use App\Console\Commands\BlogPostAddMedia;
 use App\Console\Commands\BlogPostDeleteMedia;
 use App\Console\Commands\BlogPostListMedia;
 use App\Console\Commands\BlogPostUpdateMedia;
+use App\Console\Commands\PhotoAlbumAddImage;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -21,6 +22,8 @@ class Kernel extends ConsoleKernel
         BlogPostListMedia::class,
         BlogPostUpdateMedia::class,
         BlogPostDeleteMedia::class,
+
+        PhotoAlbumAddImage::class,
     ];
 
     /**

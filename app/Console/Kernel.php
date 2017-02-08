@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\ArticleAddMedia;
 use App\Console\Commands\BlogPostAddMedia;
 use App\Console\Commands\BlogPostDeleteMedia;
 use App\Console\Commands\BlogPostListMedia;
@@ -24,6 +25,8 @@ class Kernel extends ConsoleKernel
         BlogPostDeleteMedia::class,
 
         PhotoAlbumAddImage::class,
+
+        ArticleAddMedia::class,
     ];
 
     /**

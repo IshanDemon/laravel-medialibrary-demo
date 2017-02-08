@@ -66,14 +66,14 @@ class PhotoAlbumAddImage extends Command
         return substr($path, 0, 5) == 'image';
     }
 
-    protected function validateImagePath($imagePath)
+    protected function validateImagePath(string $imagePath)
     {
         if (! file_exists($imagePath)) {
-            return $this->error('The image you provided doesn\'t exist. Try using demofiles/otter.jpg as the imagePath'.PHP_EOL);
+            throw new \InvalidArgumentException('The image you provided doesn\'t exist. Try using demofiles/otter.jpg as the imagePath');
         }
 
         if (! $this->isImage(File::getMimetype($imagePath))) {
-            return $this->error('The file you provided is not an image...');
+            throw new \InvalidArgumentException('The file you provided is not an image...');
         }
     }
 }

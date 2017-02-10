@@ -12,7 +12,7 @@ class BlogPostDeleteMedia extends Command
      *
      * @var string
      */
-    protected $signature = 'blogpost:deletemedia {id?}';
+    protected $signature = 'blogpost:delete-media {id?}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class BlogPostDeleteMedia extends Command
         $blogpost = BlogPost::find(1);
 
         if ($this->argument('id')) {
-            // Find the correct Media item and delete it
+            // find the correct Media item and delete it
             $blogpost
                 ->getMedia()
                 ->keyBy('id')
@@ -54,10 +54,10 @@ class BlogPostDeleteMedia extends Command
         }
 
         if (empty($this->argument('id'))) {
-            // Deletes all associated media files from the BlogPost
+            // deletes all associated media files from the BlogPost
             $blogpost->clearMediaCollection();
 
-            $this->info(PHP_EOL.'Deleted all media associated with the BlogPost.'.PHP_EOL);
+            $this->info('Deleted all media associated with the BlogPost.');
         }
     }
 }

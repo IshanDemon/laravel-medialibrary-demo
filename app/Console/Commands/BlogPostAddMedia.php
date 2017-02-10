@@ -12,7 +12,7 @@ class BlogPostAddMedia extends Command
      *
      * @var string
      */
-    protected $signature = 'blogpost:addmedia {mediaPath=demo/sheep.jpg}';
+    protected $signature = 'blogpost:add-media {mediaPath=demo/sheep.jpg}';
 
     /**
      * The console command description.

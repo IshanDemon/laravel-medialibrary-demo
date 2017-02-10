@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\PhotoAlbum;
 use Illuminate\Console\Command;
+use InvalidArgumentException;
 use Spatie\MediaLibrary\Helpers\File;
 
 class PhotoAlbumAddImage extends Command
@@ -13,7 +14,7 @@ class PhotoAlbumAddImage extends Command
      *
      * @var string
      */
-    protected $signature = 'photoalbum:addimage {imagePath}';
+    protected $signature = 'photoalbum:add-image {imagePath}';
 
     /**
      * The console command description.
@@ -53,27 +54,28 @@ class PhotoAlbumAddImage extends Command
 
         $media = $photoAlbum->getMedia()->last();
 
-        $this->comment('Medialibrary has automatically copied the file to the media disk:');
-        $this->line($media->getPath().PHP_EOL);
+        $this->comment("Medialibrary has automatically copied the file to the media disk. Full path to media: `{$media->getPath()}`");
 
         $this->comment('The following conversions have been generated:');
-        $this->line($media->getPath('thumbnail'));      // Get the path to the thumbnail conversion
-        $this->line($media->getPath('banner').PHP_EOL); // Get the path to the banner conversion
+        $this->line("Path to thumbnail conversion: `{$media->getPath('thumbnail')}`");
+        $this->line("Path to banner conversion: `{$media->getPath('banner')}`");
     }
 
     protected function isImage (string $path): bool
     {
-        return substr($path, 0, 5) == 'image';
+        return substr($path, 0, 5) === 'image';
     }
 
     protected function validateImagePath(string $imagePath)
     {
         if (! file_exists($imagePath)) {
-            throw new \InvalidArgumentException('The image you provided doesn\'t exist. Try using demofiles/otter.jpg as the imagePath');
+            throw new InvalidArgumentException("There doesn't exist a file at path `{$imagePath}`. Try using demofiles/otter.jpg as the imagePath");
         }
 
+        $mimeType = File::getMimetype($imagePath);
+
         if (! $this->isImage(File::getMimetype($imagePath))) {
-            throw new \InvalidArgumentException('The file you provided is not an image...');
+            throw new InvalidArgumentException("The file you provided is not an image. It has mime type `{$mimeType}`");
         }
     }
 }

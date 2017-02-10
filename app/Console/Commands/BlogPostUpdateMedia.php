@@ -12,7 +12,7 @@ class BlogPostUpdateMedia extends Command
      *
      * @var string
      */
-    protected $signature = 'blogpost:updatemedia {id} {--name=} {--filename=}';
+    protected $signature = 'blogpost:update-media {id} {--name=} {--filename=}';
 
     /**
      * The console command description.
@@ -38,17 +38,18 @@ class BlogPostUpdateMedia extends Command
      */
     public function handle()
     {
+        $mediaId = $this->argument('id');
+
         $media = BlogPost::find(1)
             ->getMedia()
             ->keyBy('id')
-            ->get($this->argument('id'));
+            ->get($mediaId);
 
         if (! $media) {
-            return $this->error('Couldn\'t find media file with that ID.');
+            return $this->error("Couldn't find media file with id `{$mediaId}`.");
         }
 
         if ($this->option('name')) {
-            // Update the media file's name.
             $media->name = $this->option('name');
         }
 
@@ -60,8 +61,8 @@ class BlogPostUpdateMedia extends Command
         // Save the Media like you're used to in Eloquent models
         $media->save();
 
-        $this->info(PHP_EOL."Media updated: {$media->name} ({$media->getPath()})");
+        $this->info("The name of the media has been updated to `{$media->name}`. The path is now `{$media->getPath()}`");
 
-        $this->call('blogpost:listmedia');
+        $this->call('blogpost:list-media');
     }
 }

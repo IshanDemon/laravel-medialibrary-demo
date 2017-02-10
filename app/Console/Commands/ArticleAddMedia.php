@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Article;
 use Illuminate\Console\Command;
+use InvalidArgumentException;
 
 class ArticleAddMedia extends Command
 {
@@ -12,7 +13,7 @@ class ArticleAddMedia extends Command
      *
      * @var string
      */
-    protected $signature = 'article:addmedia {path}';
+    protected $signature = 'article:add-media {path}';
 
     /**
      * The console command description.
@@ -62,7 +63,7 @@ class ArticleAddMedia extends Command
     protected function validatePath($path)
     {
         if (! file_exists($path)) {
-            throw new \InvalidArgumentException('The file you provided doesn\'t exist. Try using demofiles/coolvideo.webm as the path');
+            throw new InvalidArgumentException("The file you at the given path `{$path}`. Try using demofiles/coolvideo.webm as the path");
         }
     }
 }

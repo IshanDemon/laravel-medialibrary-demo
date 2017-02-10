@@ -13,7 +13,7 @@ class BlogPostListMedia extends Command
      *
      * @var string
      */
-    protected $signature = 'blogpost:listmedia';
+    protected $signature = 'blogpost:list-media';
 
     /**
      * The console command description.
@@ -52,13 +52,11 @@ class BlogPostListMedia extends Command
             });
 
         if ($mediaTable->count() == 0) {
-            return $this->error('You haven\'t added any media files yet.');
+            return $this->comment("You haven't added any media files yet.");
         }
 
-        $headers = ['Id', 'Name', 'Type', 'Size', 'Path'];
+        $headers = ['id', 'name', 'type', 'size', 'path'];
 
-        $this->line(PHP_EOL);
         $this->table($headers, $mediaTable->toArray());
-        $this->line(PHP_EOL);
     }
 }

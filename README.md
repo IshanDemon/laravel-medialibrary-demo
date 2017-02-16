@@ -1,3 +1,5 @@
+**THIS DEMO IS CURRENTLY IN DEVELOPMENT, DO NOT USE. ETA FOR COMPLETE VERSION: MARCH 2017**
+
 # Laravel Medialibrary Demo App
 
 This Laravel app is a quick command line demo of the capabilities of the [`spatie/laravel-medialibrary`](https://github.com/spatie/laravel-medialibrary) package.

@@ -19,14 +19,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        BlogPostAddMedia::class,
-        BlogPostListMedia::class,
-        BlogPostUpdateMedia::class,
-        BlogPostDeleteMedia::class,
-
-        PhotoAlbumAddImage::class,
-
-        ArticleAddMedia::class,
+        //
     ];
 
     /**

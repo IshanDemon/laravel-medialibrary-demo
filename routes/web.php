@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('introduction');
 });
+
+Route::resource('blogpost/media', 'BlogPostMediaController', ['only' => ['store', 'destroy'], 'as' => 'blogpost']);
+Route::delete('blogpost/media', 'BlogPostMediaController@destroyAll')->name('blogpost.media.destroy_all');
+
+Route::resource('photoalbum/media', 'PhotoAlbumMediaController', ['only' => ['store', 'destroy'], 'as' => 'photoalbum']);
+Route::delete('photoalbum/media', 'PhotoAlbumMediaController@destroyAll')->name('photoalbum.media.destroy_all');
+
+Route::get('/{example}', 'ExampleController@example')->name('example');

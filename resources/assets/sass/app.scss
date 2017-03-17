@@ -7,3 +7,36 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Dropzone
+@import "node_modules/dropzone/src/dropzone";
+
+body {
+  padding-top: 30px;
+}
+
+.markdown {
+  img {
+    max-width: 100%;
+  }
+}
+
+.dropzone {
+  border-style: dashed;
+
+  .dz-message {
+    font-size: 2em;
+  }
+}
+
+.media-object {
+    max-width: 150px;
+
+  &.media-object-small {
+    width: 130px;
+  }
+}
+
+.large-icon {
+  font-size: 63px;
+}

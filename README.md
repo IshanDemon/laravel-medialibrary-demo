@@ -1,10 +1,10 @@
-**THIS DEMO IS CURRENTLY IN DEVELOPMENT, DO NOT USE. ETA FOR COMPLETE VERSION: MARCH 2017**
+**THIS DEMO IS CURRENTLY IN DEVELOPMENT, DO NOT USE. ETA FOR COMPLETE VERSION: APRIL 2017**
 
 # Laravel Medialibrary Demo App
 
-This Laravel app is a quick command line demo of the capabilities of the [`spatie/laravel-medialibrary`](https://github.com/spatie/laravel-medialibrary) package.
+This Laravel app is a quick demo of some the capabilities of the [`spatie/laravel-medialibrary`](https://github.com/spatie/laravel-medialibrary) package.
 
-We've created some basic examples showing off the capabilities of the medialibrary. All examples can be found in [EXAMPLES.md](EXAMPLES.md).
+We've created a UI for some basic features like uploading media to different collections and creating different conversions. This way you can quickly start messing around with the features of the medialibrary package! Every demo comes with a small explanation of what's going on as well.
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
@@ -28,19 +28,19 @@ You can install the demo application by cloning this repo and running:
 composer install
 ```
 
-Next up, fill in your database information in the `.env` file and run the database migrations:
+Next up, create a copy of the `.env.example` file named `.env`:
 
 ```bash
-php artisan migrate
+cp .env.example .env
 ```
 
-By default we'll create some demo tables to run the example commands.
+Open the `.env` file in your favourite editor and fill in your database information, then run the migrations and seeder:
 
-Finally seed the database with the demo information: 
-
-```php
-php artisan db:seed
+```bash
+php artisan migrate --seed
 ```
+
+And that's it, you're done! Open the application in your browser and start messing around. You can find all code for the demo in `app` directory.
 
 Optionally you can modify the `config/laravel-medialibrary.php` and `config/filesystems.php` files to your specific needs.
 

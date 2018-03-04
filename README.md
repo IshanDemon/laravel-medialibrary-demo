@@ -34,7 +34,7 @@ Next up, create a copy of the `.env.example` file named `.env`:
 cp .env.example .env
 ```
 
-Open the `.env` file in your favourite editor and fill in your database information, then run the migrations and seeder:
+Open the `.env` file in your favorite editor and fill in your database information, then run the migrations and seeder:
 
 ```bash
 php artisan migrate --seed
